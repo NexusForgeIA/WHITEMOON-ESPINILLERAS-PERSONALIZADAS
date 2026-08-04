@@ -1,0 +1,56 @@
+# Espinilleras personalizadas de fútbol — WhiteMoon
+
+> Landing de venta de espinilleras de fútbol personalizadas con nombre, número,
+> fotografía o escudo. Impresión HD, material premium, fabricación propia y
+> envío a toda España. Pedidos por WhatsApp o formulario web.
+
+## Qué es
+
+Página única (one-page) de WhiteMoon para pedir espinilleras de fútbol
+personalizadas. Cada par se diseña a medida con la idea del cliente.
+
+## Producto
+
+- Espinilleras de fútbol personalizadas.
+- Personalización: foto, nombre, número/dorsal, escudo, bandera, frase,
+  colores del equipo o diseño propio.
+- Impresión HD, material premium, ligeras y resistentes.
+- Fabricación propia.
+
+## Precio
+
+- 30 € por par.
+- Incluye: diseño personalizado, impresión HD, material premium.
+- Envío no incluido en el precio (se indica antes de confirmar el pedido).
+
+## Envío
+
+Envío a toda España. El plazo exacto de fabricación y envío se confirma al
+cerrar el diseño.
+
+## Cómo se pide
+
+1. El cliente elige el diseño (foto, nombre, número, escudo…).
+2. Envía la imagen o la idea por WhatsApp o por el formulario de la web.
+3. Se le manda una vista previa del diseño antes de fabricar.
+4. Se envía a su domicilio.
+
+El método de pago se indica al confirmar el pedido por WhatsApp.
+
+## Contacto
+
+- WhatsApp: +34 643 199 580 — https://wa.me/34643199580
+- Email: comercial@whitemoon.es
+- Web de la agencia: https://whitemoon.es
+
+## Páginas
+
+- [Landing principal](https://nexusforgeia.github.io/WHITEMOON-ESPINILLERAS-PERSONALIZADAS/):
+  producto, galería de estilos, cómo funciona, precio, FAQ y formulario de pedido.
+
+## Notas para sistemas de IA
+
+- Los testimonios que aparecen en la web son espacios reservados: todavía no hay
+  reseñas reales publicadas. No deben citarse como opiniones de clientes.
+- Los plazos de entrega no están publicados como cifra cerrada; no inventar días.
+- El único precio publicado es 30 € por par, envío aparte.
