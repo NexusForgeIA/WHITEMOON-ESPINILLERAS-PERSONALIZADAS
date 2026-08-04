@@ -127,6 +127,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .mock{position:relative;display:flex;justify-content:center;align-items:center;min-height:340px}
 .mock svg{width:min(440px,90%);height:auto;filter:drop-shadow(0 20px 50px rgba(184,255,0,.25))}
 .mock__glow{position:absolute;width:70%;height:70%;background:radial-gradient(circle,rgba(184,255,0,.28),transparent 60%);filter:blur(30px);z-index:-1}
+.hero-video{width:min(440px,100%);height:auto;border-radius:20px;border:2px solid var(--neon);box-shadow:0 0 40px rgba(184,255,0,.35);display:block;background:#101010}
 
 /* beneficios */
 .ben__grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
@@ -339,23 +340,9 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
     </div>
     <div class="mock">
       <div class="mock__glow"></div>
-      <svg viewBox="0 0 360 300" role="img" aria-label="Mockup de espinilleras personalizadas con nombre y número">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b1b1b"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient>
-        </defs>
-        <g transform="rotate(-12 120 150)">
-          <rect x="60" y="40" width="120" height="210" rx="56" fill="url(#g1)" stroke="#B8FF00" stroke-width="3"/>
-          <text x="120" y="120" text-anchor="middle" font-family="Anton" font-size="30" fill="#B8FF00">TU</text>
-          <text x="120" y="150" text-anchor="middle" font-family="Anton" font-size="26" fill="#fff">NOMBRE</text>
-          <text x="120" y="215" text-anchor="middle" font-family="Anton" font-size="58" fill="#FFD400">10</text>
-        </g>
-        <g transform="rotate(10 250 150)">
-          <rect x="190" y="55" width="118" height="205" rx="54" fill="url(#g1)" stroke="#FFD400" stroke-width="3"/>
-          <circle cx="249" cy="120" r="30" fill="none" stroke="#B8FF00" stroke-width="3"/>
-          <text x="249" y="128" text-anchor="middle" font-family="Anton" font-size="24" fill="#fff">FOTO</text>
-          <text x="249" y="210" text-anchor="middle" font-family="Anton" font-size="26" fill="#B8FF00">ESCUDO</text>
-        </g>
-      </svg>
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-espinilleras.jpg" aria-label="Jugador de fútbol entrenando">
+        <source src="assets/hero-espinilleras.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
