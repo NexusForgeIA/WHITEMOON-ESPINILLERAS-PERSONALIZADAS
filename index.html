@@ -141,9 +141,9 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .filter.active,.filter:hover{background:var(--neon);color:#0B0B0B;border-color:var(--neon)}
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .tile__label span{overflow-wrap:break-word}
-.tile{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid var(--line);
-  background:linear-gradient(135deg,#101010,#1b1b1b);display:flex;align-items:center;justify-content:center;transition:transform .25s,box-shadow .25s}
-.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,0,.16),transparent 55%),radial-gradient(circle at 80% 90%,rgba(255,212,0,.12),transparent 55%)}
+.tile{--img:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  background-image:var(--img),linear-gradient(135deg,#101010,#1b1b1b);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;transition:transform .25s,box-shadow .25s}
+.tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.72)),radial-gradient(circle at 30% 20%,rgba(184,255,0,.16),transparent 55%),radial-gradient(circle at 80% 90%,rgba(255,212,0,.12),transparent 55%)}
 .tile:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(184,255,0,.22)}
 .tile__label{position:relative;z-index:1;text-align:center;padding:14px}
 .tile__label span{font-family:var(--f-head);font-size:1.5rem;text-transform:uppercase;color:#fff;line-height:1.05;display:block}
@@ -399,14 +399,14 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
       <button class="filter" data-f="numeros">Números</button>
     </div>
     <div class="gal" id="gal">
-      <div class="tile" data-c="jugadores"><div class="tile__label"><small>Jugador</small><span>Tu nombre + dorsal</span></div></div>
-      <div class="tile" data-c="ninos"><div class="tile__label"><small>Niños</small><span>Diseño divertido</span></div></div>
-      <div class="tile" data-c="equipos"><div class="tile__label"><small>Equipo</small><span>Colores del club</span></div></div>
-      <div class="tile" data-c="familia"><div class="tile__label"><small>Familiar</small><span>Tu foto favorita</span></div></div>
-      <div class="tile" data-c="escudos"><div class="tile__label"><small>Escudo</small><span>El de tu equipo</span></div></div>
-      <div class="tile" data-c="mascotas"><div class="tile__label"><small>Mascota</small><span>Tu compañero</span></div></div>
-      <div class="tile" data-c="frases"><div class="tile__label"><small>Frase</small><span>Tu lema</span></div></div>
-      <div class="tile" data-c="numeros"><div class="tile__label"><small>Número</small><span>Tu dorsal gigante</span></div></div>
+      <div class="tile" data-c="jugadores" style="--img:url('assets/gal-1.webp')"><div class="tile__label"><small>Jugador</small><span>Tu nombre + dorsal</span></div></div>
+      <div class="tile" data-c="ninos" style="--img:url('assets/gal-2.webp')"><div class="tile__label"><small>Niños</small><span>Diseño divertido</span></div></div>
+      <div class="tile" data-c="equipos" style="--img:url('assets/gal-3.webp')"><div class="tile__label"><small>Equipo</small><span>Colores del club</span></div></div>
+      <div class="tile" data-c="familia" style="--img:url('assets/gal-4.webp')"><div class="tile__label"><small>Familiar</small><span>Tu foto favorita</span></div></div>
+      <div class="tile" data-c="escudos" style="--img:url('assets/gal-5.webp')"><div class="tile__label"><small>Escudo</small><span>El de tu equipo</span></div></div>
+      <div class="tile" data-c="mascotas" style="--img:url('assets/gal-6.webp')"><div class="tile__label"><small>Mascota</small><span>Tu compañero</span></div></div>
+      <div class="tile" data-c="frases" style="--img:url('assets/gal-7.webp')"><div class="tile__label"><small>Frase</small><span>Tu lema</span></div></div>
+      <div class="tile" data-c="numeros" style="--img:url('assets/gal-8.webp')"><div class="tile__label"><small>Número</small><span>Tu dorsal gigante</span></div></div>
     </div>
     <p class="gal__note">Estos son estilos de ejemplo. Cada espinillera se diseña a medida con tu idea.</p>
   </div>
