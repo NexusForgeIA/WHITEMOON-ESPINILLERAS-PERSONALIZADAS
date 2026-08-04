@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="Espinilleras personalizadas de fútbol | WhiteMoon">
 <meta name="twitter:description" content="Nombre, número, foto o escudo. Impresión HD y envío a toda España.">
 <meta name="twitter:image" content="https://nexusforgeia.github.io/WHITEMOON-ESPINILLERAS-PERSONALIZADAS/assets/og.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0B'/%3E%3Cpath d='M11 5h10l-1 13a4 4 0 0 1-8 0z' fill='none' stroke='%23B8FF00' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B0B'/%3E%3Cpath d='M11 5h10l-1 13a4 4 0 0 1-8 0z' fill='none' stroke='%23F1C40F' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,9 +47,9 @@
 <style>
 :root{
   --bg:#0B0B0B; --panel:#1D1D1D; --panel2:#141414;
-  --neon:#B8FF00; --yellow:#FFD400; --white:#FFFFFF;
-  --muted:#9a9a9a; --line:rgba(184,255,0,.18);
-  --glow:0 0 24px rgba(184,255,0,.45);
+  --neon:#F1C40F; --yellow:#FFD400; --white:#FFFFFF;
+  --muted:#9a9a9a; --line:rgba(241,196,15,.18);
+  --glow:0 0 24px rgba(241,196,15,.45);
   --f-head:'Anton',system-ui,sans-serif; --f-body:'Sora',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -70,9 +70,9 @@ h1,h2,h3,.h{font-family:var(--f-head);font-weight:400;letter-spacing:.5px;line-h
 /* fondo estadio noche + partículas */
 body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
-   radial-gradient(900px 500px at 80% -10%, rgba(184,255,0,.10), transparent 60%),
+   radial-gradient(900px 500px at 80% -10%, rgba(241,196,15,.10), transparent 60%),
    radial-gradient(700px 500px at 0% 10%, rgba(255,212,0,.06), transparent 55%),
-   radial-gradient(1200px 700px at 50% 120%, rgba(184,255,0,.08), transparent 60%),
+   radial-gradient(1200px 700px at 50% 120%, rgba(241,196,15,.08), transparent 60%),
    linear-gradient(180deg,#070707,#0B0B0B 40%,#070707)}
 body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
   background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);background-size:34px 34px;
@@ -81,8 +81,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-body);font-weight:800;
   border:none;border-radius:14px;padding:18px 30px;font-size:1.05rem;transition:transform .15s,box-shadow .2s,background .2s;text-transform:uppercase;letter-spacing:.5px}
-.btn--wa{background:var(--neon);color:#0B0B0B;box-shadow:0 10px 30px rgba(184,255,0,.35)}
-.btn--wa:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(184,255,0,.55)}
+.btn--wa{background:var(--neon);color:#0B0B0B;box-shadow:0 10px 30px rgba(241,196,15,.35)}
+.btn--wa:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(241,196,15,.55)}
 .btn--ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.25)}
 .btn--ghost:hover{border-color:var(--neon);color:var(--neon)}
 .btn--yellow{background:var(--yellow);color:#0B0B0B;box-shadow:0 10px 30px rgba(255,212,0,.28)}
@@ -94,6 +94,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .hd__row{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--f-head);font-size:1.35rem;text-transform:uppercase}
 .brand svg{width:28px;height:28px}
+.brand-logo{height:46px;width:auto;display:block;border-radius:8px}
+.brand-logo--ft{height:54px}
 .brand b{color:var(--white)}.brand span{color:var(--neon)}
 .hd__nav{display:none;gap:26px}
 .hd__nav a{font-weight:600;font-size:.95rem;color:#cfcfcf;transition:color .2s}
@@ -125,15 +127,15 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .hd .btn .waic{width:18px;height:18px}
 /* mockup */
 .mock{position:relative;display:flex;justify-content:center;align-items:center;min-height:340px}
-.mock svg{width:min(440px,90%);height:auto;filter:drop-shadow(0 20px 50px rgba(184,255,0,.25))}
-.mock__glow{position:absolute;width:70%;height:70%;background:radial-gradient(circle,rgba(184,255,0,.28),transparent 60%);filter:blur(30px);z-index:-1}
-.hero-video{width:min(440px,100%);height:auto;border-radius:20px;border:2px solid var(--neon);box-shadow:0 0 40px rgba(184,255,0,.35);display:block;background:#101010}
+.mock svg{width:min(440px,90%);height:auto;filter:drop-shadow(0 20px 50px rgba(241,196,15,.25))}
+.mock__glow{position:absolute;width:70%;height:70%;background:radial-gradient(circle,rgba(241,196,15,.28),transparent 60%);filter:blur(30px);z-index:-1}
+.hero-video{width:min(440px,100%);height:auto;border-radius:20px;border:2px solid var(--neon);box-shadow:0 0 40px rgba(241,196,15,.35);display:block;background:#101010}
 
 /* beneficios */
 .ben__grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
 .ben{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:28px;transition:transform .2s,border-color .2s}
 .ben:hover{transform:translateY(-5px);border-color:var(--neon)}
-.ben__ic{width:56px;height:56px;border-radius:14px;background:rgba(184,255,0,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ben__ic{width:56px;height:56px;border-radius:14px;background:rgba(241,196,15,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .ben__ic svg{width:30px;height:30px;color:var(--neon)}
 .ben h3{font-size:1.35rem;margin-bottom:8px}
 .ben p{color:var(--muted);font-size:.96rem}
@@ -148,7 +150,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   background-color:#141414;background-image:var(--img,none);background-size:cover;background-position:center;
   display:flex;align-items:flex-end;justify-content:flex-start;transition:transform .25s,box-shadow .25s}
 .tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.78))}
-.tile:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(184,255,0,.22)}
+.tile:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(241,196,15,.22)}
 .tile__label{position:relative;z-index:1;text-align:left;padding:16px}
 .tile__label span{font-family:var(--f-head);font-size:1.5rem;text-transform:uppercase;color:#fff;line-height:1.05;display:block}
 .tile__label small{color:var(--neon);font-weight:700;font-size:.72rem;letter-spacing:2px;text-transform:uppercase}
@@ -168,7 +170,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 
 /* precio */
 .price{max-width:520px;margin:40px auto 0;background:linear-gradient(180deg,#141414,#0f0f0f);border:2px solid var(--neon);
-  border-radius:24px;padding:40px 32px;text-align:center;box-shadow:0 0 60px rgba(184,255,0,.18)}
+  border-radius:24px;padding:40px 32px;text-align:center;box-shadow:0 0 60px rgba(241,196,15,.18)}
 .price__tag{font-family:var(--f-body);font-weight:700;letter-spacing:3px;color:var(--muted);text-transform:uppercase;font-size:.8rem}
 .price__num{font-family:var(--f-head);font-size:5rem;color:var(--neon);text-shadow:var(--glow);line-height:1}
 .price ul{list-style:none;text-align:left;max-width:300px;margin:18px auto 8px;display:grid;gap:10px}
@@ -180,7 +182,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 /* comparativa */
 .cmp{display:grid;grid-template-columns:1fr;gap:16px;margin-top:40px}
 .cmp__col{border-radius:18px;padding:28px;border:1px solid var(--line)}
-.cmp__col.us{background:linear-gradient(180deg,rgba(184,255,0,.08),rgba(184,255,0,.02));border-color:var(--neon)}
+.cmp__col.us{background:linear-gradient(180deg,rgba(241,196,15,.08),rgba(241,196,15,.02));border-color:var(--neon)}
 .cmp__col.them{background:var(--panel2)}
 .cmp__col h3{font-size:1.5rem;margin-bottom:16px}
 .cmp__col.us h3{color:var(--neon)}
@@ -210,7 +212,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 
 /* CTA final */
 .cta{padding:96px 0;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(600px 300px at 50% 0%,rgba(184,255,0,.16),transparent 60%)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(600px 300px at 50% 0%,rgba(241,196,15,.16),transparent 60%)}
 .cta h2{font-size:clamp(2.2rem,7vw,4rem);margin-bottom:14px}
 .cta p{color:#d6d6d6;font-size:1.15rem;margin-bottom:30px}
 
@@ -238,13 +240,13 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 
 /* chat agente (Espi) */
 .chat-fab{position:fixed;right:20px;bottom:20px;z-index:80;background:var(--neon);color:#0B0B0B;border:none;border-radius:100px;
-  padding:14px 20px;font-weight:800;display:flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(184,255,0,.45)}
+  padding:14px 20px;font-weight:800;display:flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(241,196,15,.45)}
 .chat-fab svg{width:22px;height:22px}
 .chat-panel{position:fixed;right:20px;bottom:20px;z-index:90;width:360px;max-width:calc(100vw - 40px);height:540px;max-height:78vh;
   background:#101010;border:1px solid var(--neon);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;
   transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:.25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.6)}
 .chat-panel.open{transform:none;opacity:1;pointer-events:all}
-.chat-head{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(184,255,0,.1),transparent)}
+.chat-head{display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(241,196,15,.1),transparent)}
 .chat-av{width:40px;height:40px;border-radius:50%;background:var(--neon);color:#0B0B0B;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--f-head);flex-shrink:0}
 .chat-head b{font-size:.95rem}.chat-head small{color:var(--muted);font-size:.75rem;display:block}
 .chat-head .on{color:var(--neon);font-size:.72rem}
@@ -254,7 +256,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .m.bot{align-self:flex-start;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:4px 14px 14px 14px}
 .m.user{align-self:flex-end;background:var(--neon);color:#0B0B0B;font-weight:600;border-radius:14px 14px 4px 14px}
 .q{display:flex;flex-wrap:wrap;gap:8px}
-.q button{background:rgba(184,255,0,.1);border:1px solid var(--neon);color:#eaffb0;border-radius:100px;padding:8px 14px;font-size:.82rem;font-weight:600}
+.q button{background:rgba(241,196,15,.1);border:1px solid var(--neon);color:#eaffb0;border-radius:100px;padding:8px 14px;font-size:.82rem;font-weight:600}
 .q button:hover{background:var(--neon);color:#0B0B0B}
 .chat-foot{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
 .chat-foot input{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:#fff;font-family:inherit;outline:none;min-width:0}
@@ -292,9 +294,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 <!-- HEADER -->
 <header class="hd">
   <div class="wrap hd__row">
-    <a href="#top" class="brand" aria-label="WhiteMoon">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 1 0 12.5 16.4A10.5 10.5 0 0 1 16 3z" fill="#9FB3C8"/><path d="M11 8h10l-1 12a4 4 0 0 1-8 0z" fill="none" stroke="#B8FF00" stroke-width="2"/></svg>
-      <span><b>White</b><span>Moon</span></span>
+    <a href="#top" class="brand" aria-label="ALJA Sport">
+      <img src="assets/logo-alja.jpg" alt="ALJA Sport · Espinilleras personalizadas" class="brand-logo">
     </a>
     <nav class="hd__nav">
       <a href="#beneficios">Beneficios</a>
@@ -536,7 +537,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   <div class="wrap">
     <div class="ft__grid">
       <div>
-        <div class="brand" style="margin-bottom:12px"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 1 0 12.5 16.4A10.5 10.5 0 0 1 16 3z" fill="#9FB3C8"/><path d="M11 8h10l-1 12a4 4 0 0 1-8 0z" fill="none" stroke="#B8FF00" stroke-width="2"/></svg><span><b>White</b><span>Moon</span></span></div>
+        <div class="brand" style="margin-bottom:12px"><img src="assets/logo-alja.jpg" alt="ALJA Sport · Espinilleras personalizadas" class="brand-logo brand-logo--ft"></div>
         <p>Espinilleras de fútbol personalizadas con impresión HD y material premium. Fabricación propia y envío a toda España.</p>
         <div class="ft__social">
           <a href="https://wa.me/34643199580" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2s-.8.9-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5H7.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3 2 3.1 4.9 4.3c2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
@@ -572,7 +573,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 <section class="chat-panel" id="chatPanel" aria-label="Asistente Espi">
   <div class="chat-head">
     <div class="chat-av">E</div>
-    <div><b>Espi</b><small>Asistente de WhiteMoon · <span class="on">En línea</span></small></div>
+    <div><b>Espi</b><small>Asistente de ALJA Sport · <span class="on">En línea</span></small></div>
     <button class="chat-x" onclick="toggleChat()" aria-label="Cerrar">✕</button>
   </div>
   <div class="chat-body" id="chatBody"></div>
