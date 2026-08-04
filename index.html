@@ -121,6 +121,8 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);
   border-radius:100px;padding:9px 16px;font-size:.85rem;font-weight:600}
 .badge b{color:var(--neon)}
+.badge svg{width:16px;height:16px;color:var(--neon);flex-shrink:0}
+.hd .btn .waic{width:18px;height:18px}
 /* mockup */
 .mock{position:relative;display:flex;justify-content:center;align-items:center;min-height:340px}
 .mock svg{width:min(440px,90%);height:auto;filter:drop-shadow(0 20px 50px rgba(184,255,0,.25))}
@@ -142,10 +144,11 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .tile__label span{overflow-wrap:break-word}
 .tile{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid var(--line);
-  background:linear-gradient(135deg,#101010,#1b1b1b);display:flex;align-items:center;justify-content:center;transition:transform .25s,box-shadow .25s}
-.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(184,255,0,.16),transparent 55%),radial-gradient(circle at 80% 90%,rgba(255,212,0,.12),transparent 55%)}
+  background-color:#141414;background-image:var(--img,none);background-size:cover;background-position:center;
+  display:flex;align-items:flex-end;justify-content:flex-start;transition:transform .25s,box-shadow .25s}
+.tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.78))}
 .tile:hover{transform:scale(1.03);box-shadow:0 18px 40px rgba(184,255,0,.22)}
-.tile__label{position:relative;z-index:1;text-align:center;padding:14px}
+.tile__label{position:relative;z-index:1;text-align:left;padding:16px}
 .tile__label span{font-family:var(--f-head);font-size:1.5rem;text-transform:uppercase;color:#fff;line-height:1.05;display:block}
 .tile__label small{color:var(--neon);font-weight:700;font-size:.72rem;letter-spacing:2px;text-transform:uppercase}
 .gal__note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:18px}
@@ -231,16 +234,12 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 .ft__social svg{width:20px;height:20px;color:var(--neon)}
 
 /* WhatsApp flotante */
-.wa-float{position:fixed;right:20px;bottom:20px;z-index:80;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,.5);animation:wapulse 2.6s infinite}
-.wa-float svg{width:32px;height:32px}
-@keyframes wapulse{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.4)}50%{box-shadow:0 8px 30px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,0)}}
 
-/* chat agente (Nico) */
-.chat-fab{position:fixed;left:20px;bottom:20px;z-index:80;background:var(--neon);color:#0B0B0B;border:none;border-radius:100px;
+/* chat agente (Espi) */
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:80;background:var(--neon);color:#0B0B0B;border:none;border-radius:100px;
   padding:14px 20px;font-weight:800;display:flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(184,255,0,.45)}
 .chat-fab svg{width:22px;height:22px}
-.chat-panel{position:fixed;left:20px;bottom:20px;z-index:90;width:360px;max-width:calc(100vw - 40px);height:540px;max-height:78vh;
+.chat-panel{position:fixed;right:20px;bottom:20px;z-index:90;width:360px;max-width:calc(100vw - 40px);height:540px;max-height:78vh;
   background:#101010;border:1px solid var(--neon);border-radius:20px;display:flex;flex-direction:column;overflow:hidden;
   transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:.25s cubic-bezier(.34,1.56,.64,1);box-shadow:0 24px 60px rgba(0,0,0,.6)}
 .chat-panel.open{transform:none;opacity:1;pointer-events:all}
@@ -283,7 +282,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   .cta .btn--xl{width:100%}
 }
 @media(prefers-reduced-motion:reduce){
-  .wa-float,.chat-fab{animation:none!important}
+  .chat-fab{animation:none!important}
 }
 </style>
 </head>
@@ -304,7 +303,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
       <a href="#faq">FAQ</a>
     </nav>
     <div class="hd__cta">
-      <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa">🟢 <span>Pedir por WhatsApp</span></a>
+      <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa"><svg class="waic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2s-.8.9-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5H7.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3 2 3.1 4.9 4.3c2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg><span>Pedir por WhatsApp</span></a>
       <button class="burger" aria-label="Menú" onclick="document.getElementById('mnav').classList.add('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
@@ -328,14 +327,14 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
       <h1>Espinilleras<br><span class="l2">personalizadas</span></h1>
       <p class="hero__p">Diseñadas exclusivamente para ti con tu <b>nombre</b>, <b>número</b>, <b>fotografía</b> o <b>escudo</b>. Que nadie tenga unas iguales.</p>
       <div class="hero__ctas">
-        <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa btn--xl">🟢 Pedir por WhatsApp</a>
+        <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa btn--xl">Pedir por WhatsApp</a>
         <a href="#galeria" class="btn btn--ghost btn--xl">Ver modelos</a>
       </div>
       <div class="hero__badges">
-        <span class="badge"><b>⭐</b> Calidad Premium</span>
-        <span class="badge"><b>⚽</b> Personalizadas</span>
-        <span class="badge"><b>🔥</b> Fabricación propia</span>
-        <span class="badge"><b>🚚</b> Envío a toda España</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 6 20.4l1.4-6.8L2.3 9l6.9-.7z"/></svg> Calidad Premium</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8l3.5 2.5-1.3 4h-4.4l-1.3-4z"/></svg> Personalizadas</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c1 3-1 4-1 6a3 3 0 0 0 6 0c.2 3.5-2 5-2 7a4 4 0 0 1-8 0c0-3 3-4 3-7 0-1 1-2 2-3z"/></svg> Fabricación propia</span>
+        <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg> Envío a toda España</span>
       </div>
     </div>
     <div class="mock">
@@ -399,14 +398,14 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
       <button class="filter" data-f="numeros">Números</button>
     </div>
     <div class="gal" id="gal">
-      <div class="tile" data-c="jugadores"><div class="tile__label"><small>Jugador</small><span>Tu nombre + dorsal</span></div></div>
-      <div class="tile" data-c="ninos"><div class="tile__label"><small>Niños</small><span>Diseño divertido</span></div></div>
-      <div class="tile" data-c="equipos"><div class="tile__label"><small>Equipo</small><span>Colores del club</span></div></div>
-      <div class="tile" data-c="familia"><div class="tile__label"><small>Familiar</small><span>Tu foto favorita</span></div></div>
-      <div class="tile" data-c="escudos"><div class="tile__label"><small>Escudo</small><span>El de tu equipo</span></div></div>
-      <div class="tile" data-c="mascotas"><div class="tile__label"><small>Mascota</small><span>Tu compañero</span></div></div>
-      <div class="tile" data-c="frases"><div class="tile__label"><small>Frase</small><span>Tu lema</span></div></div>
-      <div class="tile" data-c="numeros"><div class="tile__label"><small>Número</small><span>Tu dorsal gigante</span></div></div>
+      <div class="tile" data-c="jugadores" style="--img:url('assets/gal-1.webp')"><div class="tile__label"><small>Jugador</small><span>Tu nombre + dorsal</span></div></div>
+      <div class="tile" data-c="ninos" style="--img:url('assets/gal-2.webp')"><div class="tile__label"><small>Niños</small><span>Diseño divertido</span></div></div>
+      <div class="tile" data-c="equipos" style="--img:url('assets/gal-3.webp')"><div class="tile__label"><small>Equipo</small><span>Colores del club</span></div></div>
+      <div class="tile" data-c="familia" style="--img:url('assets/gal-4.webp')"><div class="tile__label"><small>Familiar</small><span>Tu foto favorita</span></div></div>
+      <div class="tile" data-c="escudos" style="--img:url('assets/gal-5.webp')"><div class="tile__label"><small>Escudo</small><span>El de tu equipo</span></div></div>
+      <div class="tile" data-c="mascotas" style="--img:url('assets/gal-6.webp')"><div class="tile__label"><small>Mascota</small><span>Tu compañero</span></div></div>
+      <div class="tile" data-c="frases" style="--img:url('assets/gal-7.webp')"><div class="tile__label"><small>Frase</small><span>Tu lema</span></div></div>
+      <div class="tile" data-c="numeros" style="--img:url('assets/gal-8.webp')"><div class="tile__label"><small>Número</small><span>Tu dorsal gigante</span></div></div>
     </div>
     <p class="gal__note">Estos son estilos de ejemplo. Cada espinillera se diseña a medida con tu idea.</p>
   </div>
@@ -531,7 +530,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   <div class="wrap">
     <h2>Diseña hoy tus <span class="neon">espinilleras</span></h2>
     <p>Haz que nadie tenga unas iguales. Pídelas por WhatsApp o déjanos tus datos.</p>
-    <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa btn--xl">🟢 Pedir por WhatsApp</a>
+    <a href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" class="btn btn--wa btn--xl">Pedir por WhatsApp</a>
     <form class="form" id="leadForm" autocomplete="off">
       <label for="f-nombre">Nombre</label>
       <input id="f-nombre" name="nombre" type="text" placeholder="Tu nombre" required>
@@ -540,7 +539,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
       <label for="f-msg">¿Qué quieres personalizar?</label>
       <textarea id="f-msg" name="mensaje" rows="3" placeholder="Ej: nombre + dorsal 10, escudo del equipo, foto…"></textarea>
       <button type="submit" class="btn btn--yellow btn--xl">Enviar mi pedido</button>
-      <div class="form__ok" id="formOk">¡Recibido! Te contactamos enseguida. 🟢</div>
+      <div class="form__ok" id="formOk">¡Recibido! Te contactamos enseguida.</div>
     </form>
   </div>
 </section>
@@ -578,20 +577,15 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   </div>
 </footer>
 
-<!-- WhatsApp flotante -->
-<a class="wa-float" href="https://wa.me/34643199580?text=Hola,%20quiero%20unas%20espinilleras%20personalizadas" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2s-.8.9-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5H7.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3 2 3.1 4.9 4.3c2.4 1 2.9.8 3.4.8.5-.1 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg>
-</a>
-
-<!-- CHAT AGENTE (Nico) -->
+<!-- CHAT AGENTE (Espi) -->
 <button class="chat-fab" id="chatFab" onclick="toggleChat()" aria-label="Abrir chat">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20l1.3-4A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
-  Diseña con Nico
+  Diseña con Espi
 </button>
-<section class="chat-panel" id="chatPanel" aria-label="Asistente Nico">
+<section class="chat-panel" id="chatPanel" aria-label="Asistente Espi">
   <div class="chat-head">
-    <div class="chat-av">N</div>
-    <div><b>Nico</b><small>Asistente de WhiteMoon · <span class="on">En línea</span></small></div>
+    <div class="chat-av">E</div>
+    <div><b>Espi</b><small>Asistente de WhiteMoon · <span class="on">En línea</span></small></div>
     <button class="chat-x" onclick="toggleChat()" aria-label="Cerrar">✕</button>
   </div>
   <div class="chat-body" id="chatBody"></div>
@@ -640,7 +634,7 @@ document.getElementById('leadForm').addEventListener('submit',function(e){
   f.reset();
 });
 
-/* ---- Chat Nico ---- */
+/* ---- Chat Espi ---- */
 var chat={open:false,started:false,await:null,lead:{servicio:'',nombre:'',telefono:''}};
 var panel=document.getElementById('chatPanel'),fab=document.getElementById('chatFab'),
     body=document.getElementById('chatBody'),form=document.getElementById('chatForm'),input=document.getElementById('chatInput');
@@ -655,7 +649,7 @@ function quick(items){var w=document.createElement('div');w.className='q';
   body.appendChild(w);down();}
 function setInput(on,ph){input.disabled=!on;form.querySelector('button').disabled=!on;input.placeholder=ph||'Escribe tu respuesta…';if(on)setTimeout(function(){input.focus();},60);}
 function welcome(){setInput(false);
-  bot('¡Hola! Soy Nico ⚽ Te ayudo a diseñar tus espinilleras personalizadas en un minuto.',function(){
+  bot('¡Hola! Soy Espi. Te ayudo a diseñar tus espinilleras personalizadas en un minuto.',function(){
     bot('¿Qué quieres personalizar?',function(){
       quick(['Nombre y dorsal','Foto','Escudo del equipo','Diseño para niño','Otra idea']);
     });
@@ -666,7 +660,7 @@ function askName(){chat.await='name';bot('¡Genial! ¿Cómo te llamas?',function
 function askPhone(){chat.await='phone';bot('Encantado, '+chat.lead.nombre.split(' ')[0]+'. ¿A qué teléfono o WhatsApp te escribimos?',function(){setInput(true,'Tu teléfono…');});}
 function finish(){chat.await=null;setInput(false);
   submitLead({nombre:chat.lead.nombre,telefono:chat.lead.telefono,servicio:chat.lead.servicio,origen:'espinilleras-demo'});
-  bot('¡Listo, '+chat.lead.nombre.split(' ')[0]+'! 🟢 Hemos recibido tu idea ('+chat.lead.servicio.toLowerCase()+'). Te escribimos enseguida para enseñarte el diseño.',function(){
+  bot('¡Listo, '+chat.lead.nombre.split(' ')[0]+'! Hemos recibido tu idea ('+chat.lead.servicio.toLowerCase()+'). Te escribimos enseguida para enseñarte el diseño.',function(){
     bot('Si quieres, mándanos ya tu foto por WhatsApp al 643 199 580.');
   });
 }
